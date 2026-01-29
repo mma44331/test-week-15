@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
+import os
 
 # Simple database connection helper
 # Students should NOT modify this file
@@ -12,10 +13,10 @@ def get_db_connection():
     """
     try:
         connection = mysql.connector.connect(
-            host='mysql',
-            user='root',
-            password='rootpassword',
-            database='classicmodels'
+            host=os.getenv("MYSQL_HOST"),
+            user=os.getenv("MYSQL_USER"),
+            password=os.getenv("MYSQL_ROOT_PASSWORD"),
+            database=os.getenv("MYSQL_DATABASE")
         )
         return connection
     except Error as e:
