@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: mma44331/app-weapon:v6
+        image: mma44331/sql_query:v1
         ports:
         - containerPort: 8000
         env:
